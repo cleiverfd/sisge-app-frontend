@@ -71,17 +71,14 @@ export default {
           password: password.value,
         };
 
-        // Llama a la acción de login del store
         const response = await store.dispatch('login', credentials);
         
         console.log(response);
 
         if (response.id) {
-          router.push('/home'); // Reemplaza '/home' con la ruta a la que deseas redirigir
+          router.push('/home');
         }
-        // Redirige a la página deseada después del inicio de sesión
-        // Por ejemplo, puedes redirigir a la página de inicio
-        // router.push('/');
+       
       } catch (error) {
         console.error('Error de inicio de sesión:', error);
       }
