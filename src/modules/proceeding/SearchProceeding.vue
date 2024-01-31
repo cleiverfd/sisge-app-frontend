@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { onMounted } from 'vue'
 import { Modal } from 'flowbite'
 
@@ -20,6 +20,41 @@ onMounted(() => {
         // modal.show();
     }
 })
+</script> -->
+<script>
+import { ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
+
+export default {
+  setup() {
+    const store = useStore();
+    const proceeding = ref([]);
+
+    const fetchProceeding = async () => {
+      try {
+        const response = await store.dispatch('fetchData', {
+          path: 'proceeding',
+          method: 'get',
+        });
+        // Actualiza la variable 'proceeding' con los datos recibidos
+        proceeding.value = response;
+        console.log(response);
+      } catch (error) {
+        console.error('Error al obtener la lista de productos:', error);
+      }
+    };
+
+    // Utiliza onMounted para cargar los productos cuando el componente se monta
+    onMounted(() => {
+      fetchProceeding();
+    });
+
+    return {
+      proceeding,
+      fetchProceeding,
+    };
+  },
+};
 </script>
 
 <template>

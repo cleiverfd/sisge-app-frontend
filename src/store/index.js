@@ -75,7 +75,7 @@ const store = createStore({
       try {
         const response = await axios({
           method,
-          url: `/api/${path}`,
+          url: `/${path}`,
           data,
           headers: {
             Authorization: `Bearer ${state.token}`,
