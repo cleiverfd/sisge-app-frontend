@@ -316,11 +316,7 @@ export default {
 
     const logout = async () => {
       try {
-        // Llama a la acción 'logout' del store
         await store.dispatch('logout');
-        
-        // Redirige a la página de inicio o a donde desees después del cierre de sesión
-        // router.push('/login'); // Asegúrate de importar el router si lo necesitas
       } catch (error) {
         console.error('Error al cerrar sesión:', error);
       }
