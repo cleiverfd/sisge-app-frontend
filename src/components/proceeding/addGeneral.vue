@@ -3,7 +3,7 @@
         <section class="bg-gray-50 dark:bg-gray-900 px-8 py-10">
             <div class="mx-auto  lg:p-8 p-4 shadow-md bg-white rounded-lg">
                 <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Datos generales</h2>
-                <form action="#">
+                <!-- <form action="#"> -->
                     <div class="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:gap-6">
                         <div class="lg:col-span-3">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero de
@@ -129,22 +129,33 @@
                         </div> -->
                     </div>
                     <button type="submit"
-                        class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                        class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800" @click="nextStep">
                         Siguiente
                     </button>
-                </form>
+                <!-- </form> -->
             </div>
         </section>
     </div>
 </template>
 <script>
-// Importa lo que necesitas aquí (si es necesario)
+import { defineComponent } from 'vue';
 
-export default {
-  // Lógica del componente va aquí
-};
+export default defineComponent({
+  setup(props, { emit }) {
+    const nextStep = () => {
+      // Emitir evento para pasar al siguiente paso
+      emit('nextStep');
+    };
+
+    const prevStep = () => {
+      // Emitir evento para retroceder al paso anterior
+      emit('prevStep');
+    };
+
+    return {
+      nextStep,
+      prevStep,
+    };
+  },
+});
 </script>
-
-<style scoped>
-/* Estilos del componente van aquí */
-</style>
