@@ -2,7 +2,7 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://legalcasebackprivate.test/api'; 
+axios.defaults.baseURL = 'http://legalcasebackprivate.test/api';
 
 const store = createStore({
   state: {
@@ -27,16 +27,14 @@ const store = createStore({
         commit('SET_AUTHENTICATING', true);
 
         const response = await axios.post('/user/login', credentials);
-        commit('SET_TOKEN', response.data.token);
-        commit('SET_USER', response.data.user);
-        localStorage.setItem('token', response.data.token);
-
-        if(response.data && response.data.user){
-          return response.data.user;
-        }else{
-          return response.data;
+        if(response.data.token && response.data.user){
+          commit('SET_TOKEN', response.data.token);
+          commit('SET_USER', response.data.user);
+          localStorage.setItem('token', response.data.token);  
         }
-      
+        const user = response.data?.user || response.data;
+        return user;
+
       } catch (error) {
         console.error('Error de inicio de sesión:', error);
         throw error;
@@ -46,7 +44,7 @@ const store = createStore({
     },
     async logout({ commit }) {
       try {
-       
+
         await axios.post('/user/logout');
       } catch (logoutError) {
         console.error('Error al cerrar sesión en el backend:', logoutError);
@@ -61,7 +59,7 @@ const store = createStore({
       // Verifica la autenticación al cargar la aplicación
       if (state.token) {
         try {
-          const response = await axios.get('/api/user'); // Reemplaza con tu ruta para obtener la información del usuario
+          const response = await axios.get('/user/login'); // Reemplaza con tu ruta para obtener la información del usuario
           commit('SET_USER', response.data.user);
         } catch (error) {
           console.error('Error al verificar la autenticación:', error);

@@ -7,29 +7,32 @@ const router = createRouter({
     {
       path: '/',
       name: 'login',
-      component: () => import('../modules/auth/AuthLogin.vue')
+      component: () => import('@/modules/auth/AuthLogin.vue')
     },
     {
       path: '/home',
-      component: () => import('../components/dashboard/DashboardApp.vue'),
+      component: () => import('@/components/dashboard/DashboardApp.vue'),
       meta: { requiresAuth: true }, 
       children: [
         {
           path: '', 
-          component: () => import('../views/HomeView.vue'),
+          component: () => import('@/components/home/HomeAll.vue'),
         },
         {
           path: '/proceeding/add', 
           name: 'proceeding-add',
-          component: () => import('../modules/proceeding/AddProceeding.vue'),
+          component: () => import('@/modules/judicial/pages/proceedings/AddProceeding.vue'),
         },
         {
           path: '/proceeding/search', 
           name: 'proceeding-search',
-          component: () => import('../modules/proceeding/SearchProceeding.vue'),
+          component: () => import('@/modules/judicial/pages/proceedings/SearchProceeding.vue'),
         },
       ]
     },
+    {
+      path: ''
+    }
   ]
 });
 

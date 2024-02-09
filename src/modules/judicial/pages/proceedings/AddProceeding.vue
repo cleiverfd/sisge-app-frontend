@@ -14,9 +14,9 @@
   
 <script>
 import { ref } from 'vue';
-import AddGeneral from '@/components/proceeding/addGeneral.vue';
-import AddProcesal from '@/components/proceeding/addProcesal.vue';
-import AddAsignacion from '@/components/proceeding/addAsignacion.vue';
+import AddGeneral from '../../components/proceeding/addGeneral.vue';
+import AddProcesal from '../../components/proceeding/addProcesal.vue';
+import AddAsignacion from '../../components/proceeding/addAsignacion.vue';
 
 export default {
   components: {

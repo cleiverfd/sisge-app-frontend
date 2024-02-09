@@ -8,7 +8,6 @@
                         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
                         Inicia session en tu cuenta
                     </h1>
-                    <!-- <form class="space-y-4 md:space-y-6" action="#"> -->
                         <div>
                             <label for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
@@ -46,7 +45,6 @@
                             <a href="#"
                                 class="font-medium text-primary-600 hover:underline dark:text-primary-500">Registrate</a>
                         </p>
-                    <!-- </form> -->
                 </div>
             </div>
         </div>
