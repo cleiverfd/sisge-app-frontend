@@ -1,8 +1,7 @@
 <template>
-  <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+  <!-- <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
     <main>
       <div class="px-4 pt-6">
-
         <div class="grid w-full sm:grid-cols-1 md:grid-cols-2 gap-4 mt-4 xl:grid-cols-2 2xl:grid-cols-3">
           <div
             class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -17,7 +16,7 @@
             <div class="w-full">
               <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Clientes</h3>
               <span class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">2,340</span>
-              <!-- <p class="flex items-center text-base font-normal text-gray-500 dark:text-gray-400">
+              <p class="flex items-center text-base font-normal text-gray-500 dark:text-gray-400">
                   <span class="flex items-center mr-1.5 text-sm text-green-500 dark:text-green-400">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true">
@@ -28,13 +27,13 @@
                     3,4%
                   </span>
                   Since last month
-                </p> -->
+                </p>
             </div>
             <div class="w-full" id="week-signups-chart"></div>
           </div>
 
         </div>
-        <!-- <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-1 2xl:grid-cols-3">
+        <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-1 2xl:grid-cols-3">
             <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-2 2xl:grid-cols-3">
               <div
                 class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -251,11 +250,10 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
         <div
           class="p-4 mt-8 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-          <!-- Card header -->
           <div class="items-center justify-between lg:flex">
             <div class="mb-4 lg:mb-0">
               <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">Expedientes</h3>
@@ -272,7 +270,6 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                <!-- Dropdown menu -->
                 <div id="dropdown" class="z-10 hidden w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
                   <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">
                     Category
@@ -316,7 +313,7 @@
                   </ul>
                 </div>
               </div>
-              <!-- <div date-rangepicker class="flex items-center space-x-4">
+              <div date-rangepicker class="flex items-center space-x-4">
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
@@ -349,10 +346,9 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Hasta">
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
-          <!-- Table -->
           <div class="flex flex-col mt-6">
             <div class="overflow-x-auto rounded-lg">
               <div class="inline-block min-w-full align-middle">
@@ -382,9 +378,10 @@
                         </th>
                       </tr>
                     </thead>
-                    <tbody class="border-b dark:border-gray-700" v-for="(expediente, index) in Expedientes" :key="index">
+                    <tbody class="border-b dark:border-gray-700" v-for="(expediente, index) in expedientes"
+                      :key="index">
                       <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{
-                        expediente.Numero }}</td>
+                      expediente.Numero }}</td>
                       <td class="px-4 py-3">{{ expediente.FechaHora }}</td>
                       <td class="px-4 py-3">{{ expediente.TipoExpediente }}</td>
                       <td class="px-4 py-3">{{ expediente.Procesal }}</td>
@@ -395,7 +392,6 @@
               </div>
             </div>
           </div>
-          <!-- Card Footer -->
           <div class="flex items-center justify-between pt-3 sm:pt-6">
             <div>
               <button
@@ -404,7 +400,6 @@
                   fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg></button>
-              <!-- Dropdown menu -->
               <div
                 class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                 id="transactions-dropdown">
@@ -467,80 +462,74 @@
       rights reserved.
     </p>
 
-  </div>
+  </div> -->
+  <main class="p-4 md:ml-64 h-auto pt-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div
+          class="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 h-32 md:h-64"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+      </div>
+      <div
+        class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-4"
+      ></div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+      </div>
+      <div
+        class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-4"
+      ></div>
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+      </div>
+    </main>
 </template>
-<script setup>
-const Expedientes = [
-  {
-    "Numero": "02065-2012-0-1706-JP-CI-01",
-    "FechaHora": "2024-02-09 10:30 AM",
-    "TipoExpediente": "Civil",
-    "Procesal": "Denunciante",
-    "Estado": "Trámite"
-  },
-  {
-    "Numero": "03098-2015-0-2301-PL-CI-02",
-    "FechaHora": "2024-02-10 02:45 PM",
-    "TipoExpediente": "Penal",
-    "Procesal": "Denunciado",
-    "Estado": "Ejecución"
-  },
-  {
-    "Numero": "04123-2018-0-3412-LB-CI-03",
-    "FechaHora": "2024-02-11 08:15 AM",
-    "TipoExpediente": "Laboral",
-    "Procesal": "Demandante",
-    "Estado": "Trámite"
-  },
-  {
-    "Numero": "05245-2017-0-4523-FM-CI-04",
-    "FechaHora": "2024-02-12 01:00 PM",
-    "TipoExpediente": "Familiar",
-    "Procesal": "Demandado",
-    "Estado": "Ejecución"
-  },
-  {
-    "Numero": "06234-2019-0-5634-AD-CI-05",
-    "FechaHora": "2024-02-13 11:20 AM",
-    "TipoExpediente": "Administrativo",
-    "Procesal": "Denunciante",
-    "Estado": "Trámite"
-  },
-  {
-    "Numero": "07111-2016-0-6711-CO-CI-06",
-    "FechaHora": "2024-02-14 03:30 PM",
-    "TipoExpediente": "Civil",
-    "Procesal": "Denunciado",
-    "Estado": "Ejecución"
-  },
-  {
-    "Numero": "08333-2020-0-7833-FM-CI-07",
-    "FechaHora": "2024-02-15 09:45 AM",
-    "TipoExpediente": "Penal",
-    "Procesal": "Demandante",
-    "Estado": "Trámite"
-  },
-  {
-    "Numero": "09222-2014-0-8922-FM-CI-08",
-    "FechaHora": "2024-02-16 12:10 PM",
-    "TipoExpediente": "Familiar",
-    "Procesal": "Demandado",
-    "Estado": "Ejecución"
-  },
-  {
-    "Numero": "10345-2013-0-9102-LB-CI-09",
-    "FechaHora": "2024-02-17 04:00 PM",
-    "TipoExpediente": "Laboral",
-    "Procesal": "Denunciante",
-    "Estado": "Trámite"
-  },
-  {
-    "Numero": "11234-2021-0-1011-AD-CI-10",
-    "FechaHora": "2024-02-18 10:15 AM",
-    "TipoExpediente": "Administrativo",
-    "Procesal": "Denunciado",
-    "Estado": "Ejecución"
-  }
-];
+<script>
+import expedientesData from '@/data/expedientes.json';
 
+export default {
+  data() {
+    return {
+      expedientes: expedientesData,
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    token() {
+      return this.$store.state.token;
+    },
+  },
+};
 </script>

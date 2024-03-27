@@ -5,11 +5,9 @@ import SidebarDesktop from '../layout/SidebarDesktop.vue';
 import LayoutNabvar from '../layout/LayoutNavbar.vue';
 </script>
 <template>
-    <main>
+    <div class="antialiased bg-gray-50 dark:bg-gray-900">
         <LayoutNabvar />
-        <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
-            <SidebarDesktop />
-            <RouterView />
-        </div>
-    </main>
+        <SidebarDesktop />
+        <RouterView />
+    </div>
 </template>
