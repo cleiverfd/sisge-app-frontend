@@ -461,12 +461,6 @@ export default {
             profile: false,
         };
     },
-    // mounted() {
-    //     document.addEventListener('click', this.closeMenus);
-    // },
-    // beforeUnmount() {
-    //     document.removeEventListener('click', this.closeMenus);
-    // },
     computed: {
         user() {
             return this.$store.state.user;
@@ -506,7 +500,7 @@ export default {
 
         },
         toggleSidebar() {
-            this.$root.$emit('toggle-sidebar');
+            this.$emit('toggle-sidebar');
         }
     }
 };
